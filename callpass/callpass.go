@@ -4,7 +4,7 @@ import (
 	"strings"
 )
 
-func GetCallpass(callsign string) int16 {
+func GetCallPass(callsign string) int16 {
 	call := strings.ToUpper(callsign)
 
 	hash := int16(0x73e2)
@@ -20,7 +20,7 @@ func GetCallpass(callsign string) int16 {
 	return int16(hash & 0x7fff)
 }
 
-func CheckCallpass(callsign string, pass int16) bool {
-	code := GetCallpass(callsign)
+func CheckCallPass(callsign string, pass int16) bool {
+	code := GetCallPass(callsign)
 	return code == pass
 }
