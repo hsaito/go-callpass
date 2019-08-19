@@ -12,3 +12,11 @@ func TestCallpass(t *testing.T) {
 		t.Errorf("Wrong callpass result.")
 	}
 }
+
+func TestCallpassValidation(t *testing.T) {
+	result := callpass.CheckCallpass("TESTING", 31421)
+
+	if !result {
+		t.Errorf("Validation failed.")
+	}
+}

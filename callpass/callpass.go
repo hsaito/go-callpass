@@ -12,7 +12,9 @@ func GetCallpass(callsign string) int16 {
 
 	for i < len(call) {
 		hash = hash ^ int16(call[i])<<8
-		hash = hash ^ int16(call[i+1])
+		if i+1 < len(call) {
+			hash = hash ^ int16(call[i+1])
+		}
 		i += 2
 	}
 	return int16(hash & 0x7fff)
